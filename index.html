@@ -1,69 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vineeth</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vineeth Ramesh</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <script>
+      function openPopup() {
+        document.getElementById("contact-popup").style.display = "block";
+      }
+    
+      function closePopup() {
+        document.getElementById("contact-popup").style.display = "none";
+      }
 
+      function goToPortfolio() {
+        window.location.href = "portfolio.html";
+      }
+    </script>
 
-<body>
-
-    <header>
-        <h2 class="logo">VR</h2>
-        <nav class="navigation">
-            <a href="#" >Home</a>
-            <a href="#">About</a>
-            <a href="#">Resume</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-
-    <section class="parallax">
-        <img src="hill1.png" id="hill1">
-        <img src="hill2.png" id="hill2">
-        <img src="hill3.png" id="hill3">
-        <img src="hill4.png" id="hill4">
-        <img src="hill5.png" id="hill5">
-        <img src="tree.png" id="tree">
-        <h2 id="text">Vineeth Ramesh</h2>
-        <img src="leaf.png" id="leaf">
-        <img src="plant.png" id="plant">
-    </section>
-
-    <section class="sec">
-        <h2>Aspiring Product Manager</h2>
-        <p> asdkoasjvcoisdjoivj ios iojoiajivj O        ajlfdkjlkjvldk iljaifjldj joalkjdfclsdj oijAOsidfjsaiz </p>
-        <p> asdkoasjvcoisdjoivj ios iojoiajivj O        ajlfdkjlkjvldk iljaifjldj joalkjdfclsdj oijAOsidfjsaiz </p>
-        <p> asdkoasjvcoisdjoivj ios iojoiajivj O        ajlfdkjlkjvldk iljaifjldj joalkjdfclsdj oijAOsidfjsaiz </p>
-        <p> asdkoasjvcoisdjoivj ios iojoiajivj O        ajlfdkjlkjvldk iljaifjldj joalkjdfclsdj oijAOsidfjsaiz </p>
-        <p> asdkoasjvcoisdjoivj ios iojoiajivj O        ajlfdkjlkjvldk iljaifjldj joalkjdfclsdj oijAOsidfjsaiz </p>
-        <p> asdkoasjvcoisdjoivj ios iojoiajivj O        ajlfdkjlkjvldk iljaifjldj joalkjdfclsdj oijAOsidfjsaiz </p>
-        <p> asdkoasjvcoisdjoivj ios iojoiajivj O        ajlfdkjlkjvldk iljaifjldj joalkjdfclsdj oijAOsidfjsaiz </p>
-        <p> asdkoasjvcoisdjoivj ios iojoiajivj O        ajlfdkjlkjvldk iljaifjldj joalkjdfclsdj oijAOsidfjsaiz </p>
-              
-          <div class="footer-social">
-            <h1>Contact Vineeth Ramesh</h1>
-            <form  action="https://formspree.io/f/xleypzle"   method="POST">
-           <label> Your email: <input type="email" name="email"> </label>
-           <label> Your message:<textarea name="message"></textarea> </label>
-           <!-- your other form fields go here -->
-           <button type="submit">Send</button> 
-          </form>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <div class="logo"><a href="#">😎 Vineeth Ramesh</a></div>
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+          <li><a href="index.html">Home</a></li>          
+          <li><a href="Vineeth Ramesh Resume.pdf">Resume</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="#" onclick="openPopup()">Connect</a></li>
+        </ul>
+      </div>
+       <section class="section with-border">
+    
+      </section>
+    </nav>
+    <section class="section">
+      <div class="section__container">
+        <div class="content">
+          <p class="subtitle">Hello,</p>
+          <h1 class="title">
+            I'm <span>Vineeth Ramesh<br />a</span> Product Chef
+          </h1>
+          <p class="description" style="text-align:justify;">
+          <b><i>Im a masters student and a Aspiring Product Chef.</i></b><br><br>My Pantry Overflows with Analytical and Research skills, 
+          a Sous-Chef's Mastery of AI , and a Secret Ingredient: Passion for User Advocacy. <br><br>
+          I Blend Spices with A/B Testing Sauces, Simmering them into Satisfying Experiences that Leave Users Hungry for More.
+          Every Dish is Seasoned with Stakeholder Empathy and Product Goals, Ensuring each Bite Resonates with both Users and Business.
+          </p>
+          <div class="action__btns">
+            <button class="hire__me" href="#" onclick="openPopup()">Hire Me</button>
+            <button class="portfolio" onclick="goToPortfolio()">Portfolio</button>
           </div>
         </div>
-        <div class="footer-bottom">
-          &copy; 2023 Vineeth Ramesh. All rights reserved.
+        <div class="image">
+          <img src="profile.png" alt="profile" />
         </div>
-      </footer>
+      </div>
+      
+    </section>
 
+        <!-- Add this code inside the body tag, after the existing content -->
+        <div id="contact-popup" class="popup">
+          <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <h2>Let's Connect 😃 </h2>
+            <form id="contact-form" action="https://formspree.io/f/xjvnbpvw" method="POST">
+              <div class="form-grid">
+                <label for="name">Name:</label>
+                
+                <input type="text" id="name" name="name" required>
+                
+                
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <br>
+              </div>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+        
+    <footer class="centered-footer">
+        <p>&copy; 2024 Vineeth Ramesh. All rights reserved.</p>
+    </footer>
     
-
-    <script src="script.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-</body>
-
+  </body>
 </html>

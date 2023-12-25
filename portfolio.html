@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Add your custom styles here */
+
+      /* Assuming each case study has a container with the class "case-study" */
+      .section__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; /* Adjust the gap as needed */
+      }
+
+      .case-study {
+        /* Customize the style of each case study container */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        border-color: black;
+        height: 350px;
+        text-align: center;
+      }
+
+      .case-study img {
+        max-width: 100%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 768px) {
+        /* Adjust styles for smaller screens, e.g., mobile devices */
+        .section__container {
+          grid-template-columns: repeat(1, 1fr); /* Change to a single column layout on smaller screens */
+        }
+      }
+
+      /* Style for the title */
+      .section-title {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      .section-title-1 {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+
+      .centeredd-footer {            
+        text-align: center; /* This centers the text within the footer */
+        width: 100%; /* Ensures the footer spans the entire width of the page */
+      }
+
+      .section.with-border {
+        border-top: 5px solid #9333ea;
+        padding-top: 10px; /* Adjust padding to compensate for the border thickness */
+      }
+
+      CSS
+/* General styling */
+body {
+  font-family: sans-serif;
+  background-color: #f5f5f5;
+}
+
+#contact-popup {
+  display: none;
+  background-color: #fff;
+  border-radius: 10 px;
+  border: 5px solid  #9333ea;
+  padding: 20px;
+  position: fixed; /* Keep it fixed on the screen */
+  top: 50%;
+  left: 50%;
+  width: 450px;
+  transform: translate(-50%, -50%); /* Center it horizontally and vertically */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+  z-index: 10; /* Ensure it appears above other elements */
+}
+
+.popup-content {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Form styling */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  border-radius: 10 px;
+  border-color: #9333ea;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 5px;
+ 
+}
+
+input,
+textarea {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #030000;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#message {
+  height: 150px;
+}
+
+button[type="submit"] {
+  background-color: #28bc2d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  
+}
+
+/* Close button styling */
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+
+.section {
+  margin-block-end:auto; /* Adjust the margin as needed */
+}
+
+
+    </style>
+
+<script>
+  function openPopup() {
+    document.getElementById("contact-popup").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("contact-popup").style.display = "none";
+  }
+</script>
+    <title>Vineeth</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <div class="logo"><a href="#">😎 Vineeth Ramesh</a></div>
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Vineeth Ramesh Resume.pdf">Resume</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="#" onclick="openPopup()">Connect</a></li>
+        </ul>
+      </div>
+      <section class="section with-border">
+    
+      </section>
+    </nav>
+   
+    <section class="section">
+      <h1 class="section-title">Welcome to My Portfolio</h1>
+      <p>
+        I'm Vineeth
+        <br>
+        <br>
+        <br>
+      
+      </p>
+    </section>
+    
+    
+    <section class="section">
+      <h1 class="section-title">Portfolio...</h1>
+      <p class="section-title-1">(**Click on the Title to view**)</p>
+      <div class="section__container">
+        <!-- Case Study 1 -->
+        <div class="case-study">
+          <img src="high.png" alt="">
+          <h2>
+            <a href="Flying High_ A Airport Case Study  by VR.pdf" style="color: black;">Flying High: An Airport Case Study</a>
+          </h2>
+          
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="case-study">
+          <img src="simpl.png" alt="">
+          <br>
+          <br>
+          <a href="Simpl A Product Case Study by VR.pdf" style="color: black;"><h2>Simpl Product Case Study</h2></a>
+                    
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="case-study">
+          <img src="money.png" alt="">
+          <a href="Simpl A Product Case Study by VR.pdf" style="color: black;"><h2>IND Money Case Study</h2></a>
+          
+        
+        </div>
+        
+        
+
+   
+      </div>
+      
+    </section>
+    
+        
+    <section class="section1">
+      <h1 class="section-title">Projects...</h1>
+      <p class="section-title-1">(**Click on the Title to view**)</p>
+      <div class="section__container">
+        <!-- Case Study 1 -->
+        <div class="case-study">
+          <img src="lets.png" alt="">
+          <h2>
+            <br>
+            <br>
+            <a href="https://github.com/vineeth2281/Lets-Meet" style="color: black;">Lets Meet- A video meet platform with Empathia Chatbot</a>
+          </h2>
+          
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="case-study">
+          <img src="caption.png" alt="">
+          <br>
+          <br>
+          <br>
+          <a href="https://github.com/vineeth2281/Scene-to-Context" style="color: black;"><h2>Scene2Context- Captioning with Attention Mechanism </h2></a>
+                    
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="case-study">
+          <img src="toxi.png" alt="">
+          <a href="https://github.com/vineeth2281/L50-TOXICITY-PREDICTION-USING-QSAR" style="color: black;"><h2>Toxicity Prediction</h2></a>
+       
+        </div>
+
+        
+        <!-- Case Study 3 -->
+        <div class="case-study">
+          <img src="langchain.png" alt="">
+          <br>
+          <br>
+          <a href="https://github.com/vineeth2281/AI-Wizard-DocxQ--Langchain" style="color: black;"><h2>AI Wizard-Chat with doc (Langchain)</h2></a>
+       
+        </div>
+
+   
+      </div>
+    </section>
+
+
+    <!-- Add this code inside the body tag, after the existing content -->
+    <div id="contact-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-popup" onclick="closePopup()">&times;</span>
+        <h2>Let's Connect 😃</h2>
+        <form id="contact-form" action="https://formspree.io/f/xjvnbpvw" method="POST">
+          <div class="form-grid">
+            <label for="name">Name:</label>
+            
+            <input type="text" id="name" name="name" required>
+            
+            
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <br>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+    
+    
+    <section class="centeredd-footer" >
+      <p>&copy; 2024 Vineeth Ramesh. All rights reserved.</p>
+      
+    </section>
+ 
+  </body>
+ 
+</html>
