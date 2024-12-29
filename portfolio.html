@@ -1,322 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Vineeth's Portfolio</title>
     <style>
-      /* Add your custom styles here */
-
-      /* Assuming each case study has a container with the class "case-study" */
-      .section__container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px; /* Adjust the gap as needed */
-      }
-
-      .case-study {
-        /* Customize the style of each case study container */
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 15px;
-        border-color: black;
-        height: 350px;
-        text-align: center;
-      }
-
-      .case-study img {
-        max-width: 100%;
-        border-radius: 4px;
-        margin-bottom: 10px;
-      }
-
-      @media (max-width: 768px) {
-        /* Adjust styles for smaller screens, e.g., mobile devices */
-        .section__container {
-          grid-template-columns: repeat(1, 1fr); /* Change to a single column layout on smaller screens */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-      }
 
-      /* Style for the title */
-      .section-title {
-        text-align: center;
-        font-size: 28px;
-        margin-bottom: 20px;
-      }
+        body {
+            background-color: #f8f9fc;
+            color: #333;
+            line-height: 1.6;
+        }
 
-      .section-title-1 {
-        text-align: center;
-        font-size: 15px;
-        margin-bottom: 20px;
-      }
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
 
-      .centeredd-footer {            
-        text-align: center; /* This centers the text within the footer */
-        width: 100%; /* Ensures the footer spans the entire width of the page */
-      }
+        .nav__content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-      .section.with-border {
-        border-top: 5px solid #9333ea;
-        padding-top: 10px; /* Adjust padding to compensate for the border thickness */
-      }
+        .logo a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-      CSS
-/* General styling */
-body {
-  font-family: sans-serif;
-  background-color: #f5f5f5;
-}
+        .nav__content ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-#contact-popup {
-  display: none;
-  background-color: #fff;
-  border-radius: 10 px;
-  border: 5px solid  #9333ea;
-  padding: 20px;
-  position: fixed; /* Keep it fixed on the screen */
-  top: 50%;
-  left: 50%;
-  width: 450px;
-  transform: translate(-50%, -50%); /* Center it horizontally and vertically */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
-  z-index: 10; /* Ensure it appears above other elements */
-}
+        .nav__content ul a {
+            text-decoration: none;
+            color: #666;
+            transition: all 0.3s;
+            position: relative;
+            font-weight: 500;
+        }
 
-.popup-content {
-  text-align: center;
-}
+        .nav__content ul a:hover {
+            color: #9333ea;
+        }
 
-h2 {
-  margin-bottom: 20px;
-  font-weight: bold;
-}
+        .nav__content ul a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #9333ea;
+            transition: width 0.3s;
+        }
 
-/* Form styling */
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  border-radius: 10 px;
-  border-color: #9333ea;
-}
+        .nav__content ul a:hover::after {
+            width: 100%;
+        }
 
-label {
-  display: block;
-  font-weight: bold;
-  font-size: large;
-  margin-bottom: 5px;
- 
-}
+        .section {
+            padding: 6rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-input,
-textarea {
-  padding: 10px;
-  width: 300px;
-  border: 1px solid #030000;
-  border-radius: 5px;
-  font-size: 16px;
-}
+        .section-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
 
-#message {
-  height: 150px;
-}
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
 
-button[type="submit"] {
-  background-color: #28bc2d;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-  
-}
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
-/* Close button styling */
-.close-popup {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 18px;
-  cursor: pointer;
-}
+        .portfolio-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
 
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
 
+        .portfolio-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
 
-.section {
-  margin-block-end:auto; /* Adjust the margin as needed */
-}
+        .portfolio-content {
+            padding: 1.5rem;
+        }
 
+        .portfolio-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
 
+        .portfolio-content a {
+            text-decoration: none;
+            color: #9333ea;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: gap 0.3s;
+        }
+
+        .portfolio-content a:hover {
+            gap: 0.75rem;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            backdrop-filter: blur(5px);
+        }
+
+        .popup-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #9333ea;
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            background: #9333ea;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #7928ca;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-popup:hover {
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            color: #666;
+            margin-top: 4rem;
+        }
+
+        .border-top {
+            border-top: 5px solid #9333ea;
+        }
+
+        @media (max-width: 768px) {
+            .nav__content {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .checkbox {
+                display: block;
+                cursor: pointer;
+            }
+
+            .nav__content ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                flex-direction: column;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            #check:checked ~ ul {
+                display: flex;
+            }
+        }
     </style>
-
-<script>
-  function openPopup() {
-    document.getElementById("contact-popup").style.display = "block";
-  }
-
-  function closePopup() {
-    document.getElementById("contact-popup").style.display = "none";
-  }
-</script>
-    <title>Vineeth</title>
-  </head>
-  <body>
-    <nav>
-      <div class="nav__content">
-        <div class="logo"><a href="#">😎 Vineeth Ramesh</a></div>
-        <label for="check" class="checkbox">
-          <i class="ri-menu-line"></i>
-        </label>
-        <input type="checkbox" name="check" id="check" />
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Vineeth Ramesh Resume.pdf">Resume</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="#" onclick="openPopup()">Connect</a></li>
-        </ul>
-      </div>
-      <section class="section with-border">
-    
-      </section>
+</head>
+<body>
+    <nav class="border-top">
+        <div class="nav__content">
+            <div class="logo"><a href="#">😎 Vineeth Ramesh</a></div>
+            <label for="check" class="checkbox">
+                <i class="ri-menu-line"></i>
+            </label>
+            <input type="checkbox" name="check" id="check" />
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="#" onclick="openPopup()">Connect</a></li>
+            </ul>
+        </div>
     </nav>
-   
+
     <section class="section">
-      <h1 class="section-title">Welcome to My Portfolio</h1>
-      <p>
-        I'm Vineeth
-        <br>
-        <br>
-        <br>
-      
-      </p>
+        <h1 class="section-title">Case Studies</h1>
+        <p class="section-subtitle">Exploring real-world problems and solutions</p>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <img src="high.png" alt="Airport Case Study">
+                <div class="portfolio-content">
+                    <h3>Flying High: An Airport Case Study</h3>
+                    <p>A comprehensive analysis of airport operations and user experience improvements.</p>
+                    <a href="Flying High_ A Airport Case Study  by VR.pdf">
+                        View Case Study <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <img src="simpl.png" alt="Simpl Case Study">
+                <div class="portfolio-content">
+                    <h3>Simpl Product Case Study</h3>
+                    <p>Analyzing and improving the digital payment experience.</p>
+                    <a href="Simpl A Product Case Study by VR.pdf">
+                        View Case Study <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <img src="money.png" alt="IND Money Case Study">
+                <div class="portfolio-content">
+                    <h3>IND Money Case Study</h3>
+                    <p>Exploring financial technology solutions and user engagement.</p>
+                    <a href="Simpl A Product Case Study by VR.pdf">
+                        View Case Study <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
-    
-    
+
     <section class="section">
-      <h1 class="section-title">Portfolio...</h1>
-      <p class="section-title-1">(**Click on the Title to view**)</p>
-      <div class="section__container">
-        <!-- Case Study 1 -->
-        <div class="case-study">
-          <img src="high.png" alt="">
-          <h2>
-            <a href="Flying High_ A Airport Case Study  by VR.pdf" style="color: black;">Flying High: An Airport Case Study</a>
-          </h2>
-          
-        </div>
-
-        <!-- Case Study 2 -->
-        <div class="case-study">
-          <img src="simpl.png" alt="">
-          <br>
-          <br>
-          <a href="Simpl A Product Case Study by VR.pdf" style="color: black;"><h2>Simpl Product Case Study</h2></a>
-                    
-        </div>
-
-        <!-- Case Study 3 -->
-        <div class="case-study">
-          <img src="money.png" alt="">
-          <a href="Simpl A Product Case Study by VR.pdf" style="color: black;"><h2>IND Money Case Study</h2></a>
-          
+        <h1 class="section-title">Projects</h1>
+        <p class="section-subtitle">Technical implementations and innovations</p>
         
-        </div>
-        
-        
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <img src="lets.png" alt="Lets Meet">
+                <div class="portfolio-content">
+                    <h3>Lets Meet</h3>
+                    <p>Video meeting platform with integrated Empathia Chatbot for enhanced user interaction.</p>
+                    <a href="https://github.com/vineeth2281/Lets-Meet">
+                        View Project <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
 
-   
-      </div>
-      
-    </section>
-    
-        
-    <section class="section1">
-      <h1 class="section-title">Projects...</h1>
-      <p class="section-title-1">(**Click on the Title to view**)</p>
-      <div class="section__container">
-        <!-- Case Study 1 -->
-        <div class="case-study">
-          <img src="lets.png" alt="">
-          <h2>
-            <br>
-            <br>
-            <a href="https://github.com/vineeth2281/Lets-Meet" style="color: black;">Lets Meet- A video meet platform with Empathia Chatbot</a>
-          </h2>
-          
-        </div>
+            <div class="portfolio-card">
+                <img src="caption.png" alt="Scene2Context">
+                <div class="portfolio-content">
+                    <h3>Scene2Context</h3>
+                    <p>Advanced image captioning system using attention mechanism.</p>
+                    <a href="https://github.com/vineeth2281/Scene-to-Context">
+                        View Project <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
 
-        <!-- Case Study 2 -->
-        <div class="case-study">
-          <img src="caption.png" alt="">
-          <br>
-          <br>
-          <br>
-          <a href="https://github.com/vineeth2281/Scene-to-Context" style="color: black;"><h2>Scene2Context- Captioning with Attention Mechanism </h2></a>
-                    
-        </div>
+            <div class="portfolio-card">
+                <img src="toxi.png" alt="Toxicity Prediction">
+                <div class="portfolio-content">
+                    <h3>Toxicity Prediction</h3>
+                    <p>ML-based system for predicting toxicity levels using QSAR.</p>
+                    <a href="https://github.com/vineeth2281/L50-TOXICITY-PREDICTION-USING-QSAR">
+                        View Project <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
 
-        <!-- Case Study 3 -->
-        <div class="case-study">
-          <img src="toxi.png" alt="">
-          <a href="https://github.com/vineeth2281/L50-TOXICITY-PREDICTION-USING-QSAR" style="color: black;"><h2>Toxicity Prediction</h2></a>
-       
+            <div class="portfolio-card">
+                <img src="langchain.png" alt="AI Wizard">
+                <div class="portfolio-content">
+                    <h3>AI Wizard-DocxQ</h3>
+                    <p>Document interaction system built with Langchain technology.</p>
+                    <a href="https://github.com/vineeth2281/AI-Wizard-DocxQ--Langchain">
+                        View Project <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-
-        
-        <!-- Case Study 3 -->
-        <div class="case-study">
-          <img src="langchain.png" alt="">
-          <br>
-          <br>
-          <a href="https://github.com/vineeth2281/AI-Wizard-DocxQ--Langchain" style="color: black;"><h2>AI Wizard-Chat with doc (Langchain)</h2></a>
-       
-        </div>
-
-   
-      </div>
     </section>
 
-
-    <!-- Add this code inside the body tag, after the existing content -->
     <div id="contact-popup" class="popup">
-      <div class="popup-content">
-        <span class="close-popup" onclick="closePopup()">&times;</span>
-        <h2>Let's Connect 😃</h2>
-        <form id="contact-form" action="https://formspree.io/f/xjvnbpvw" method="POST">
-          <div class="form-grid">
-            <label for="name">Name:</label>
-            
-            <input type="text" id="name" name="name" required>
-            
-            
-    
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            
-    
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <br>
-          </div>
-          <button type="submit">Send</button>
-        </form>
-      </div>
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <h2>Let's Connect 😃</h2>
+            <form id="contact-form" action="https://formspree.io/f/xjvnbpvw" method="POST">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
     </div>
-    
-    
-    <section class="centeredd-footer" >
-      <p>&copy; 2024 Vineeth Ramesh. All rights reserved.</p>
-      
-    </section>
- 
-  </body>
- 
+
+    <footer>
+        <p>&copy; 2024 Vineeth Ramesh. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openPopup() {
+            document.getElementById("contact-popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("contact-popup").style.display = "none";
+        }
+
+        // Close popup when clicking outside
+        window.onclick = function(event) {
+            const popup = document.getElementById("contact-popup");
+            if (event.target === popup) {
+                closePopup();
+            }
+        }
+
+        // Form submission handling
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    this.reset();
+                    closePopup();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            }).catch(error => {
+                alert('Error sending message. Please try again.');
+            });
+        });
+    </script>
+</body>
 </html>
